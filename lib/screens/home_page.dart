@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo/constants.dart';
+import 'home_route.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -10,11 +11,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   static List<Widget> widgetOption = [
-    Column(
-      children: const [
-        Text('Home Page'),
-      ],
-    ),
+    const HomeRoute(),
     Column(
       children: const [
         Text('Calender'),
@@ -56,15 +53,16 @@ class _HomeState extends State<Home> {
         currentIndex: _selectedIndex,
         onTap: onItemPressed,
       ),
-      appBar: AppBar(
-        title: const Text(
-          'TODO',
-          style: kAppBarTitleTextStyle,
-        ),
-      ),
-      body: Center(
-        child: widgetOption.elementAt(_selectedIndex),
-      ),
+      // appBar: AppBar(
+      //   title: const Text(
+      //     'TODO',
+      //     style: kAppBarTitleTextStyle,
+      //   ),
+      // ),
+      body: const HomeRoute(),//Center(
+      //   child: widgetOption.elementAt(_selectedIndex),
+      // ),
     );
   }
 }
+
