@@ -6,3 +6,5 @@ const kAppBarTitleTextStyle = TextStyle(
 
 const kTableContainerTextStyle =
     TextStyle(fontSize: 25, fontWeight: FontWeight.w500);
+
+enum Week {mon, tues, wed, thur, fri}

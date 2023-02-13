@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo/constants.dart';
 
-import '../components/table_container.dart';
-
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
@@ -11,6 +9,24 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  static List<Widget> widgetOption = [
+    Column(
+      children: const [
+        Text('Home Page'),
+      ],
+    ),
+    Column(
+      children: const [
+        Text('Calender'),
+      ],
+    ),
+    Column(
+      children: const [
+        Text('Setting'),
+      ],
+    ),
+  ];
+
   int _selectedIndex = 0;
 
   void onItemPressed(int index) {
@@ -29,12 +45,12 @@ class _HomeState extends State<Home> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.add),
-            label: 'Add',
+            icon: Icon(Icons.calendar_month),
+            label: 'Calender',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
-            label: 'setting',
+            label: 'Setting',
           ),
         ],
         currentIndex: _selectedIndex,
@@ -46,34 +62,9 @@ class _HomeState extends State<Home> {
           style: kAppBarTitleTextStyle,
         ),
       ),
-      body: Column(
-        children: [
-          Table(
-            // border: TableBorder.all(),
-            // columnWidths: const <int, TableColumnWidth>{
-            //   0: IntrinsicColumnWidth(),
-            //   1: FlexColumnWidth(),
-            //   2: FixedColumnWidth(64),
-            // },
-            defaultVerticalAlignment: TableCellVerticalAlignment.middle,
-            children: const <TableRow>[
-              TableRow(
-                children: <Widget>[
-                  // TableContainer(title: 'Time'),
-                  TableContainer(title: 'Mon'),
-                  TableContainer(title: 'Tues'),
-                  TableContainer(title: 'Wed'),
-                  TableContainer(title: 'Thur'),
-                  TableContainer(title: 'Fri'),
-                ],
-              ),
-              // TableRow(),
-            ],
-          ),
-        ],
+      body: Center(
+        child: widgetOption.elementAt(_selectedIndex),
       ),
     );
   }
 }
-
-
