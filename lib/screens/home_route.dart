@@ -1,32 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:todo/components/week_container.dart';
+import 'package:todo/constants.dart';
+import 'package:todo/models/class_data.dart';
 
 class HomeRoute extends StatelessWidget {
-  const HomeRoute({
+  HomeRoute({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.grey,
-      child: SafeArea(
-        child: Column(
-          // mainAxisAlignment: MainAxisAlignment.center,
-          // crossAxisAlignment: CrossAxisAlignment.stretch,
+    return ListView(
+      padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+      children: [
+        Column(
           children: [
-            Row(
-              children: [
-                WeekContainer(week: 'Mon'),
-                WeekContainer(week: 'Tues'),
-                WeekContainer(week: 'Wed'),
-                WeekContainer(week: 'Thur'),
-                WeekContainer(week: 'Fri'),
-              ],
-            ),
+            WeekContainer(week: Week.mon),
+            WeekContainer(week: Week.tues),
+            WeekContainer(week: Week.wed),
+            WeekContainer(week: Week.thur),
+            WeekContainer(week: Week.fri),
           ],
         ),
-      ),
+      ],
     );
   }
 }

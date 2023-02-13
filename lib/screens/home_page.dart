@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo/constants.dart';
+import 'package:todo/screens/login_screen.dart';
 import 'home_route.dart';
 
 class Home extends StatefulWidget {
@@ -11,7 +12,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   static List<Widget> widgetOption = [
-    const HomeRoute(),
+    HomeRoute(),
     Column(
       children: const [
         Text('Calender'),
@@ -38,6 +39,10 @@ class _HomeState extends State<Home> {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profile',
+          ),
+          BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
           ),
@@ -45,24 +50,22 @@ class _HomeState extends State<Home> {
             icon: Icon(Icons.calendar_month),
             label: 'Calender',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Setting',
-          ),
         ],
         currentIndex: _selectedIndex,
         onTap: onItemPressed,
       ),
-      // appBar: AppBar(
-      //   title: const Text(
-      //     'TODO',
-      //     style: kAppBarTitleTextStyle,
-      //   ),
-      // ),
-      body: const HomeRoute(),//Center(
-      //   child: widgetOption.elementAt(_selectedIndex),
-      // ),
+      appBar: AppBar(
+        title: const Text(
+          'NTUE Curriculum',
+          // style: kAppBarTitleTextStyle,
+          style: TextStyle(
+            fontFamily: 'Ubuntu',
+          ),
+        ),
+      ),
+      body: Center(
+        child: widgetOption.elementAt(_selectedIndex),
+      ),
     );
   }
 }
-
