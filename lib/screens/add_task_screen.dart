@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:todo/constants.dart';
 
 class AddTaskScreen extends StatelessWidget {
-  const AddTaskScreen({Key? key}) : super(key: key);
+  AddTaskScreen({Key? key}) : super(key: key);
+
+  late String taskTitle;
+  late String taskTime;
 
   @override
   Widget build(BuildContext context) {
@@ -30,43 +33,23 @@ class AddTaskScreen extends StatelessWidget {
               height: 50.0,
             ),
             TextField(
-              onChanged: (value) {},
+              onChanged: (value) {
+                taskTitle = value;
+              },
               // textAlign: TextAlign.center,
-              decoration: const InputDecoration(
-                hintText: 'Enter your task',
-                contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(32.0)),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.blueAccent, width: 1.0),
-                  borderRadius: BorderRadius.all(Radius.circular(32.0)),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.blueAccent, width: 2.0),
-                  borderRadius: BorderRadius.all(Radius.circular(32.0)),
-                ),
-              ),
+              decoration:
+                  kTextFieldDecoration.copyWith(hintText: 'Enter your task'),
             ),
-            const SizedBox(height: 10,),
+            const SizedBox(
+              height: 10,
+            ),
             TextField(
-              onChanged: (value) {},
+              onChanged: (value) {
+                taskTime = value;
+              },
               // textAlign: TextAlign.center,
-              decoration: const InputDecoration(
-                hintText: 'Enter task\'s time',
-                contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(32.0)),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.blueAccent, width: 1.0),
-                  borderRadius: BorderRadius.all(Radius.circular(32.0)),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.blueAccent, width: 2.0),
-                  borderRadius: BorderRadius.all(Radius.circular(32.0)),
-                ),
-              ),
+              decoration:
+                  kTextFieldDecoration.copyWith(hintText: 'Enter the time'),
             ),
             const SizedBox(
               height: 50,
@@ -77,7 +60,9 @@ class AddTaskScreen extends StatelessWidget {
                   Colors.blue,
                 ),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pop(context);
+              },
               child: const Text(
                 'Create',
                 style: TextStyle(

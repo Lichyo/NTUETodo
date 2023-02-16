@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo/components/task_list.dart';
 import 'package:todo/constants.dart';
 import 'package:todo/models/curriculum.dart';
 import 'package:todo/screens/add_task_screen.dart';
@@ -18,7 +19,7 @@ class TODO extends StatelessWidget {
         ),
         onPressed: () {
           showModalBottomSheet(
-              context: context, builder: (context) => const AddTaskScreen());
+              context: context, builder: (context) => AddTaskScreen());
         },
       ),
       appBar: AppBar(
@@ -71,16 +72,10 @@ class TODO extends StatelessWidget {
             child: Container(
               padding: const EdgeInsets.symmetric(vertical: 40.0),
               decoration: BoxDecoration(
-                color: Colors.grey.shade300,
+                // color: Colors.grey.shade300,
                 borderRadius: BorderRadius.circular(30.0),
               ),
-              child: ListView(
-                children: const [
-                  TaskTile(),
-                  TaskTile(),
-                  TaskTile(),
-                ],
-              ),
+              child: const TaskList(),
             ),
           ),
         ],

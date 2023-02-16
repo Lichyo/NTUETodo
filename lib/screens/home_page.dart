@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:todo/constants.dart';
 import 'package:todo/screens/login_screen.dart';
 import 'home_route.dart';
+import 'profile_route.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -18,11 +19,7 @@ class _HomeState extends State<Home> {
         Text('Calender'),
       ],
     ),
-    Column(
-      children: const [
-        Text('Setting'),
-      ],
-    ),
+    const ProfileRoute(),
   ];
 
   int _selectedIndex = 0;
@@ -39,16 +36,16 @@ class _HomeState extends State<Home> {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-          ),
-          BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.calendar_month),
             label: 'Calender',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profile',
           ),
         ],
         currentIndex: _selectedIndex,

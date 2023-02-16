@@ -10,6 +10,8 @@ const kTitleTextStyle = TextStyle(
   fontFamily: 'Ubuntu',
 );
 
+const kProfileTextStyle = TextStyle(fontWeight: FontWeight.bold, fontSize: 25.0,);
+
 const kLittleTextStyle = TextStyle(
   fontWeight: FontWeight.w500,
   fontSize: 20,
