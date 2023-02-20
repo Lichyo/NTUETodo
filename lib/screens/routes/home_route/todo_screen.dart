@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:todo/components/task_list.dart';
 import 'package:todo/constants.dart';
 import 'package:todo/models/curriculum.dart';
-import 'package:todo/screens/add_task_screen.dart';
+import 'package:todo/screens/routes/home_route/add_task_screen.dart';
 import 'package:todo/components/task_tile.dart';
 
 class TODO extends StatelessWidget {
@@ -13,6 +13,7 @@ class TODO extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.lightBlueAccent.shade400,
         child: const Icon(
           Icons.add,
           size: 30.0,
@@ -23,6 +24,7 @@ class TODO extends StatelessWidget {
         },
       ),
       appBar: AppBar(
+        backgroundColor: Colors.lightBlueAccent.shade400,
         title: const Text(
           'NTUE Curriculum',
           style: kAppBarTitleTextStyle,

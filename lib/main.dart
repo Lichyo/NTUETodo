@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:todo/models/task/task_data.dart';
 import 'screens/home_page.dart';
-import 'constants.dart';
 
 void main() => runApp(const MyApp());
 

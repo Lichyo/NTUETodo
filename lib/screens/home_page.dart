@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:todo/constants.dart';
-import 'package:todo/screens/login_screen.dart';
-import 'home_route.dart';
-import 'profile_route.dart';
+import 'routes/home_route/home_route.dart';
+import 'routes/profile_route.dart';
+import 'routes/calender/calender_screen.dart';
+
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -14,9 +14,10 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   static List<Widget> widgetOption = [
     HomeRoute(),
+    CalendarScreen(),
     Column(
       children: const [
-        Text('Calender'),
+        Text('Chat'),
       ],
     ),
     const ProfileRoute(),
@@ -34,24 +35,33 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
+        items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: const Icon(Icons.home),
             label: 'Home',
+            backgroundColor: Colors.lightBlueAccent.shade400,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_month),
-            label: 'Calender',
+            icon: const Icon(Icons.calendar_month),
+            label: 'Calendar',
+            backgroundColor: Colors.lightBlueAccent.shade400,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
+            icon: const Icon(Icons.chat),
+            label: 'Chat',
+            backgroundColor: Colors.lightBlueAccent.shade400,
+          ),
+          BottomNavigationBarItem(
+            icon: const Icon(Icons.person),
             label: 'Profile',
+            backgroundColor: Colors.lightBlueAccent.shade400,
           ),
         ],
         currentIndex: _selectedIndex,
         onTap: onItemPressed,
       ),
       appBar: AppBar(
+        backgroundColor: Colors.lightBlueAccent.shade400,
         title: const Text(
           'NTUE Curriculum',
           // style: kAppBarTitleTextStyle,
@@ -62,6 +72,7 @@ class _HomeState extends State<Home> {
       ),
       body: Center(
         child: widgetOption.elementAt(_selectedIndex),
+        // child: LoginScreen(),
       ),
     );
   }

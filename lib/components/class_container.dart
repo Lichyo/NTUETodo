@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo/models/curriculum.dart';
-import 'package:todo/screens/todo_screen.dart';
+import 'package:todo/screens/routes/home_route/todo_screen.dart';
 
 class ClassContainer extends StatelessWidget {
   ClassContainer({
